@@ -18,7 +18,7 @@ target_include_directories(stm32cubemx INTERFACE
     ../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
     ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include
     ../../Drivers/CMSIS/Include
-    ../../User/Applications/inc
+    ../../User/Application/inc
     ../../User/Tests/inc
 )
 
@@ -40,11 +40,16 @@ target_sources(stm32cubemx INTERFACE
     ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
     ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
     ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
     ../../Core/Src/system_stm32f4xx.c
     ../../Core/Src/sysmem.c
     ../../Core/Src/syscalls.c
-    ../../User/Applications/src/stm32f4xx_uart_u.c
-    ../../User/Tests/src/test_printf.c
+    ../../User/Application/src/app_common.c
+    ../../User/Application/src/app_peripherial.c
+    ../../User/Application/src/app_system.c
+    ../../User/Application/src/app_ds18B20_timer.c
+    ../../User/Tests/src/test_gpio.c
+    ../../User/Tests/src/test_uart.c
     ../../startup_stm32f407xx.s
 )
 

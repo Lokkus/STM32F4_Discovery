@@ -30,12 +30,12 @@
 #include <sys/time.h>
 #include <sys/times.h>
 #include "stm32f4xx_hal.h"
+#include "app_peripherial.h"
 
 
 /* Variables */
 extern int __io_putchar(int ch) __attribute__((weak));
 extern int __io_getchar(void) __attribute__((weak));
-extern UART_HandleTypeDef huart1; // Declare the UART handler
 
 
 char *__env[1] = { 0 };
@@ -179,6 +179,6 @@ int _execve(char *name, char **argv, char **env)
 
 int __io_putchar(int ch)
 {
-    HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
+    HAL_UART_Transmit(app_get_uart1_handle(), (uint8_t*)&ch, 1, HAL_MAX_DELAY);
     return 1;
 }
